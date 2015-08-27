@@ -44,6 +44,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Fast editing and reloading of vimrc configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+silent !mkdir -p ~/.vim_runtime
 map <leader>e :e! ~/.vim_runtime/my_configs.vim<cr>
 autocmd! bufwritepost vimrc source ~/.vim_runtime/my_configs.vim
 
@@ -53,6 +54,7 @@ autocmd! bufwritepost vimrc source ~/.vim_runtime/my_configs.vim
 "    means that you can undo even when you close a buffer/VIM
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
+    silent !mkdir -p ~/.vim_runtime/temp_dirs/undodir
     set undodir=~/.vim_runtime/temp_dirs/undodir
     set undofile
 catch
